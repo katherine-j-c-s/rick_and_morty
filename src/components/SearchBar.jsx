@@ -1,8 +1,19 @@
-export default function SearchBar({onSearch}) {
+import React, {useState} from "react";
+import "./styleSearch.css";
+export default function SearchBar({ onSearch }) {
+   let [id,setId]= useState("")
+   function HandleChange(event) {
+      setId(event.target.value);
+   }
    return (
-      <div>
-         <input type='search' />
-         <button onClick={()=>onSearch("not found id")}>Agregar</button>
+      <div className="searchContainer">
+         <input 
+         type='search'
+         name='search'
+         onChange={HandleChange}
+         value={id} 
+         />
+         <button onClick={()=>onSearch(id)}>Agregar</button>
       </div>
    );
 }

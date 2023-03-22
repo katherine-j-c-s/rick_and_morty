@@ -1,0 +1,36 @@
+.cardsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right, #201249 , #31124ba7 , #1e0d41);
+    overflow: hidden;
+    width: 20%;
+    height: 600px;
+}
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+}
+.cardContainer img {
+    width: 100%;
+    height: 60%;
+}
+.cardContainer h2 {
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+    margin: 4%;
+}
+.BtnCard {
+    position: absolute;
+    border-radius: 0px 0px 0px 10px;
+    height: 50px;
+    width: 50px;
+    align-self: flex-end;
+    font-size: 20px;
+}

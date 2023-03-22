@@ -1,7 +1,9 @@
+import { keyboard } from '@testing-library/user-event/dist/keyboard';
 import Card from './Card';
-export default function Cards({characters}) {
+import './styleCard.css'
+export default function Cards({characters, onClose}) {
    return (
-      <div>
+      <div className='cardsContainer'>
          {characters && // y como hiciste?
             characters.map((element,index)=>{
                return (
@@ -14,7 +16,7 @@ export default function Cards({characters}) {
                      gender={element.gender}
                      origin={element.origin.name}
                      image={element.image}
-                     onClose={() => window.alert("Emulamos que se cierra la card")}
+                     onClose={onClose}
                   ></Card>
                );
             })
