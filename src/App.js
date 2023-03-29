@@ -3,6 +3,8 @@ import './App.css';
 import axios from 'axios'
 import { useLocation, useNavigate } from "react-router-dom";
 import { Route , Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { removeFav } from './redux/actions/actions';
 
 import LogIn from './components/LogIn/LogIn.jsx';
 import Navbar from './components/NavBar/Navbar';
@@ -15,6 +17,8 @@ function App() {
    const [characters,setCharacters] = useState([])
    let currentLocation = useLocation();
    let navigate = useNavigate()
+   const dispatch = useDispatch()
+
    function onSearch(id) {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
          if (data.name) {
@@ -24,10 +28,11 @@ function App() {
          }
       });
    }
-   function onClose(id) {
+   function onClose(id)  {
       setCharacters((oldChars) => {
          return oldChars.filter((ch)=>ch.id !== id)
       });
+      dispatch(removeFav(id))
    }
    function logOut() {
       navigate('/')

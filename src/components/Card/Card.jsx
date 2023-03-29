@@ -6,7 +6,7 @@ import { useSelector ,useDispatch} from 'react-redux'
 
 export default function Card(props) {
   
-  const {id,name,image,onClose} = props
+  const {id,name,image,onClose,gender} = props
   let [isFav,setIsFav] = useState(false)
 
   const favorites = useSelector((st)=> st.myFavorites)
@@ -16,11 +16,9 @@ export default function Card(props) {
     if (isFav) {
       setIsFav(false)
       dispatch(removeFav(id))
-      console.log(favorites)
     }else {
       setIsFav(true)
       dispatch(addFav(props))
-      console.log(favorites)
     }
   }
 
