@@ -9,6 +9,7 @@ import Navbar from './components/NavBar/Navbar';
 import Cards from './components/Cards/Cards';
 import Details from './components/Details/Details';
 import Usuario from './components/Usuario/Usuario';
+import Favorites from './components/Favorites/Favorites'
 
 function App() {
    const [characters,setCharacters] = useState([])
@@ -36,9 +37,10 @@ function App() {
          { currentLocation.pathname === "/" ? null :  currentLocation.pathname === "/miUsurio" ? null  : <Navbar logOut={logOut} onSearch={onSearch}></Navbar>}
          <Routes>
             <Route path='/' element = {<LogIn></LogIn>}/>
+            <Route path='/miUsurio/' element={<Usuario></Usuario>}/>
             <Route path='/home' element ={<Cards characters={characters} onClose={onClose}></Cards>}/>
             <Route path='/details/:id' element={<Details characters={characters}></Details>}/>
-            <Route path='/miUsurio/' element={<Usuario></Usuario>}/>
+            <Route path='/favorites' element={<Favorites onClose={onClose}></Favorites>}/>
          </Routes>
          {}
       </div>
