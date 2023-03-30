@@ -6,7 +6,6 @@ import { useParams , Link } from 'react-router-dom';
 export default function Details() {
     const {id} = useParams()
     let [character, setCharacter] = useState({})
-    console.log(character);
 
     useEffect(() => {
         axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
