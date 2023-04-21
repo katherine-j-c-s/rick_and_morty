@@ -45,7 +45,6 @@ export default function LogIn({login}) {
                 [event.target.name]:event.target.value
             })
         )
-        console.log(error);
     }
     function handleSubmit(e) {
         e.preventDefault()

@@ -22,8 +22,8 @@ function App() {
    let currentLocation = useLocation();
    const dispatch = useDispatch()
 
-   const EMAIL = 'kathijcs@gmail.com';
-   const PASSWORD = '12345678';
+   // const EMAIL = 'kathijcs@gmail.com';
+   // const PASSWORD = '12345678';
    
 
    function onSearch(id) {

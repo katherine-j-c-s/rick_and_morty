@@ -1,16 +1,15 @@
 const axios = require('axios')
-require('dotenv').config()
 
-const URL = process.env.API_URL
+const URL = "https://rickandmortyapi.com/api/character/"
 
-const STATUS_OK = process.env.DB_STATUS_OK
-const STATUS_ERR = process.env.DB_STATUS_ERR
+const STATUS_OK = 200
+const STATUS_ERR = 404
 
 function getAllChar(req,res) {
     try {
         axios.get(`${URL}`).then(({ data }) => {
             if (data) {
-              const characters = data.filter((data) => {
+              const characters = data.results.map((data) => {
                 const character = {
                   id: data.id,
                   status: data.status,

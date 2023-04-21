@@ -1,7 +1,5 @@
-require('dotenv').config()
-
-const STATUS_OK = process.env.DB_STATUS_OK
-const STATUS_ERR = process.env.DB_STATUS_ERR
+const STATUS_OK = 200
+const STATUS_ERR = 404
 
 let myFavorites = []
 

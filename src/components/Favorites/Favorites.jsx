@@ -27,14 +27,14 @@ export default function Favorites({onClose}) {
     return (
     <div>
         <select name='order' defaultValue={"DEFAULT"} onChange={handleOrder}>
-            <option  value="DEFAULT" disabled>
+            <option  value="DEFAULT" disabled="true">
                 Select Order
             </option>
             <option  value="Ascendente">Ascendente</option>
             <option value="Descendente">Descendente</option>
         </select>
         <select name='filter' defaultValue={"DEFAULT"} onChange={handleFilter}>
-            <option value="DEFAULT" disabled>
+            <option value="DEFAULT" disabled="true">
                 Select Filter
             </option>
             <option value="Male">Male</option>

@@ -1,30 +1,32 @@
-require('dotenv').config()
+const { User } = require('../../db/db')
 
-const USER = process.env.DB_USER
-const EMAIL = process.env.DB_EMAIL
-const PASSWORD = process.env.DB_PASSWORD
+const STATUS_OK = 200
+const STATUS_ERR = 404
 
-const STATUS_OK = process.env.DB_STATUS_OK
-const STATUS_ERR = process.env.DB_STATUS_ERR
-
-function login(req,res) {
+async function login(req,res) {
     const { password, email } = req.query;
     try {
         if (!password || !email ) {
-            res.status(STATUS_ERR).json({ message: "There isn't a password or email" })
+            res.status(STATUS_ERR).json({ message: "Faltan datos" })
         }
-        if (password === PASSWORD && email === EMAIL) {
-            res.status(STATUS_OK).json({ access: true });
-        }
-        else {
-            res.status(STATUS_OK).json({ access: false });
+        else{
+            const user = await User.findByPK({ where: {email}})
+            if (user) {
+                const constraseña = await User.findByPK({where: {email,password}})
+                if(!constraseña){
+                    res.status(STATUS_ERR).json({ message: "Contraseña incorrecta"});
+                }else{
+                    res.status(STATUS_OK).json({ access: true });
+                }
+            }else{
+                res.status(STATUS_ERR).json({ message: "Usuario no encontrado"});
+            }
         }
     } catch (error) {
         res.status(STATUS_ERR).json({ message: error });
     }
 }
 
-
-module.exports = {
-    login,
+module.exports= {
+    login
 }
