@@ -1,4 +1,5 @@
 import React from 'react';
+import './Login.css'
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
@@ -62,23 +63,25 @@ export default function LogIn({login}) {
         }
     }
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className='containerLogin'>
+            <form className='bokLogin' onSubmit={handleSubmit}>
                 <input 
                 type="text"
                 value={inputs.email}
+                className='inputsLogin'
                 name="email"
                 placeholder='agrege su email'
                 onChange={handleinput} />
-                <p>{error.email}</p>
+                <p className='errorLogin'>{error.email}</p>
                 <input 
                 type="text"
                 value={inputs.password}
+                className='inputsLogin'
                 name="password"
                 placeholder='agrege su contraseña'
                 onChange={handleinput} />
-                <p>{error.password}</p>
-                <button type="submit">Ingresar</button>
+                <p className='errorLogin'>{error.password}</p>
+                <button className="btnLogin" type="submit">Ingresar</button>
             </form>
         </div>
     )

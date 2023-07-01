@@ -2,6 +2,7 @@ import React from 'react'
 import { useState , useEffect } from 'react'
 import { useNavigate , Link} from 'react-router-dom'
 import axios from 'axios'
+import './Usuario.css'
 import Imagenes from './Imagenes/Imagenes'
 
 export default function Usuario() {

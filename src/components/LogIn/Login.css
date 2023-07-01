@@ -1,0 +1,41 @@
+.containerLogin{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.bokLogin{
+    margin-top: 10rem;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.644);
+}
+.inputsLogin{
+    background: transparent;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 3px solid rgb(160, 160, 241);
+    border-radius: 5px;
+    text-decoration: none !important;
+    color: white !important;
+    transition: ease-in-out 0.2s;
+}
+.inputsLogin:hover{
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.618);
+    border: 3px solid rgb(130, 130, 214);
+}
+.btnLogin{
+    background: rgb(160, 160, 241);
+    padding: 10px;
+    border: none;
+    transition: ease-in-out 0.2s;
+    border-radius: 5px;
+}
+.btnLogin:hover{
+    color:white;
+    background: rgb(93, 93, 178);
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.618);
+}
+.errorLogin{
+    color: red;
+}
