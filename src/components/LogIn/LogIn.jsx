@@ -9,8 +9,8 @@ export default function LogIn({login}) {
 
    const navigate = useNavigate();
    let [inputs,setInputs] = useState({
-        email:"",
-        password:"",
+        email:"kathijcs@gmail.com",
+        password:"12345678",
    })
 
    let [error,setError] = useState({
